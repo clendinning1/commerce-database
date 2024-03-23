@@ -22,8 +22,11 @@ CREATE TABLE Product (
     -- CODE HERE: `price` should validate that the value is a decimal
     stock INT NOT NULL,
     -- CODE HERE: `stock` should validate that the value is numeric
-    category_id INT
-    -- CODE HERE: `category_id` should reference the Category model's id.
+    FOREIGN KEY category_id REFERENCES Category(id)
+    -- CODE HERE = must be an integer
+    -- FOREIGN KEY = key from another table
+    -- category_id = column name
+    -- REFERENCES Category(id) = contents are the `id` column from the `Category` table
 );
 
 CREATE TABLE Tag (
@@ -33,28 +36,8 @@ CREATE TABLE Tag (
 
 CREATE TABLE ProductTag (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    product_id INT,
-    -- CODE HERE: `product_id` should reference the Product model's id.
-    tag_id INT
-    -- CODE HERE: `tag_id` should reference the Tag model's id.
+    FOREIGN KEY product_id REFERENCES Product(id),
+    -- CODE HERE = must be an integer
+    FOREIGN KEY tag_id REFERENCES Tag(id)
+    -- CODE HERE = must be an integer
 );
-
-
--- CREATE TABLE department (
---     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
---     -- auto increment generates a unique number for each new insert --
---     name VARCHAR(30) NOT NULL
---     -- varchar = a string up to the length of the variable --
--- );
-
--- CREATE TABLE roles (
---     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
---     title VARCHAR(30) NOT NULL,
---     salary DECIMAL,
---     department_id INT,
-
---     FOREIGN KEY (department_id)
---     -- key named department_id --
---     REFERENCES department(id)
---     -- the department_id key pulls from "id" in the department table --
--- );
