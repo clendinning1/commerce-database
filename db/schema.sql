@@ -1,14 +1,14 @@
--- DROP DATABASE
+-- DROP DATABASE --
 DROP DATABASE IF EXISTS ecommerce_db;
 
--- CREATE DATABASE
+-- CREATE DATABASE --
 CREATE DATABASE ecommerce_db;
 
+-- USE DATABASE --
 USE ecommerce_db;
 
 
-
--- TABLES
+-- CREATE TABLES --
 
 CREATE TABLE Category (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -22,11 +22,7 @@ CREATE TABLE Product (
     -- CODE HERE: `price` should validate that the value is a decimal
     stock INT NOT NULL,
     -- CODE HERE: `stock` should validate that the value is numeric
-    FOREIGN KEY category_id REFERENCES Category(id)
-    -- CODE HERE = must be an integer
-    -- FOREIGN KEY = key from another table
-    -- category_id = column name
-    -- REFERENCES Category(id) = contents are the `id` column from the `Category` table
+    FOREIGN KEY category_id REFERENCES Category(id) INT
 );
 
 CREATE TABLE Tag (
@@ -36,8 +32,6 @@ CREATE TABLE Tag (
 
 CREATE TABLE ProductTag (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    FOREIGN KEY product_id REFERENCES Product(id),
-    -- CODE HERE = must be an integer
-    FOREIGN KEY tag_id REFERENCES Tag(id)
-    -- CODE HERE = must be an integer
+    FOREIGN KEY product_id REFERENCES Product(id) INT,
+    FOREIGN KEY tag_id REFERENCES Tag(id) INT
 );
