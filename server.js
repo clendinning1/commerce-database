@@ -4,6 +4,10 @@ const routes = require('./routes');
 // import sequelize connection
 const sequelize = require('./config/connection');
 
+// import models
+// calling the models here initializes the table in the mysql db
+const Category = require('./models/Category');
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 

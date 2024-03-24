@@ -34,4 +34,5 @@ Category.init(
 );
 
 // exporting the table
+// import it to server.js to access it. calling it initializes the table in the mysql db
 module.exports = Category;
