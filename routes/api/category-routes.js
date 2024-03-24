@@ -34,10 +34,11 @@ router.get('/:id', async (req, res) => {
 // Create a new Category
 router.post('/', async (req, res) => {
 
-  /* POST REQUEST SYNTAX:
-      {
-        "category_name": "new"
-      }
+  /*
+  POST REQUEST SYNTAX:
+  {
+    "category_name": "new"
+  }
   */
 
   try {
