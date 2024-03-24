@@ -1,6 +1,9 @@
 // import sequelize connection
 const sequelize = require('./config/connection');
 
+const express = require('express');
+const routes = require('./routes');
+
 // import models
 // calling the models here initializes the table in the mysql db
 const Category = require('./models/Category');
