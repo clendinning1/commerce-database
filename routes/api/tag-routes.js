@@ -7,16 +7,27 @@ router.get('/', async (req, res) => {
   // find all tags
   // be sure to include its associated Product data
 
-  const data = await Tag.findAll({ model: Product }).catch((err) => { res.json(err) });
-  res.json(data);
+  try {
+    const data = await Tag.findAll({ model: Product });
+    res.json(data);
+  } catch {
+    res.json(err);
+    console.log("ERROR:", err);
+  }
+
 });
 
 router.get('/:id', async (req, res) => {
   // find a single tag by its `id`
   // be sure to include its associated Product data
+  try {
+    const data = await Tag.findByPk(req.params.id, { include: Product });
+    res.json(data);
+  } catch {
+    res.json(err);
+    console.log("ERROR:", err);
+  }
 
-  const data = await Tag.findByPk(req.params.id, { include: Product }).catch((err) => { res.json(err) });
-  res.json(data);
 });
 
 router.post('/', async (req, res) => {
