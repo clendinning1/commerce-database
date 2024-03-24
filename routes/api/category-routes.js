@@ -6,14 +6,16 @@ const { Category, Product } = require('../../models');
 router.get('/', async (req, res) => {
   // find all categories
   // be sure to include its associated Products
-  const data = await Category.findAll({ model: Product }).catch((err) => {res.json(err)});
+
+  const data = await Category.findAll({ model: Product }).catch((err) => { res.json(err) });
   res.json(data);
 });
 
 router.get('/:id', async (req, res) => {
   // find one category by its `id` value
   // be sure to include its associated Products
-  const data = await Category.findByPk(req.params.id, { include: Product } ).catch((err) => { res.json(err) });
+
+  const data = await Category.findByPk(req.params.id, { include: Product }).catch((err) => { res.json(err) });
   res.json(data);
 });
 
@@ -27,6 +29,21 @@ router.put('/:id', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
   // delete a category by its `id` value
+
+  try {
+    const data = await Category.destroy({
+      where: {
+        id: req.params.id,
+      }
+    });
+    if (!data) {
+      res.status(404).json({ message: 'No category with this id!' });
+      return;
+    }
+    res.status(200).json(data);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
