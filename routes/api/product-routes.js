@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
     res.json(err);
     console.log("ERROR:", err);
   }
-  
+
 });
 
 // get one product
@@ -30,17 +30,17 @@ router.get('/:id', async (req, res) => {
     res.json(err);
     console.log("ERROR:", err);
   }
-  
+
 });
 
 // create new product
 router.post('/', (req, res) => {
   /* req.body should look like this...
     {
-      product_name: "Basketball",
-      price: 200.00,
-      stock: 3,
-      tagIds: [1, 2, 3, 4]
+      "product_name": "Basketball",
+      "price": 200.00,
+      "stock": 3,
+      "tag_id": [1, 2, 3, 4]
     }
   */
   Product.create(req.body)
