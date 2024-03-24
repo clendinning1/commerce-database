@@ -13,17 +13,30 @@ class Category extends Model { }
 
 Category.init(
   {
-    // first parameter
-    // define columns
+    // FIRST PARAMETER (defining columns)
+
+    // (if you don't specify a primary key, sequelize will autocreate one, but best practice to do manually.)
+    category_id: {
+      // same as `id INT NOT NULL AUTO_INCREMENT PRIMARY KEY`
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true
+    },
+    category_name: {
+      // same as `category_name TEXT NOT NULL`
+      type: DataTypes.STRING,
+      allowNull: false
+    }
   },
   {
-    // second parameter
+    // SECOND PARAMETER (db connection and misc settings)
+
     // link to db conection
     sequelize,
     // setting to false to remove `created_at` and `updated_at` fields
     timestamps: false,
-    // "If freezeTableName is true, sequelize will not try to alter the DAO name to get the table name. Otherwise, the dao name will be pluralized."
-    // ?? i think it automatically makes every column and/or table name plural unless freezeTableName is true, but unsure
+    // prevent sequelize from renaming the table (otherwise auto plurals)
     freezeTableName: true,
     // converts all camelcase columns to underscored
     // ie, isPaperback -> is_paperback

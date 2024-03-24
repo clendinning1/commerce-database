@@ -1,0 +1,1 @@
+- sequelize docs https://sequelize.org/docs/v6/
