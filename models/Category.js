@@ -3,6 +3,9 @@ const { Model, DataTypes } = require('sequelize');
 // importing sequelize from connection.js
 const sequelize = require('../config/connection.js');
 
+const express = require('express');
+const routes = require('./routes');
+
 // creating a new Sequelize model for Category
 // extending the Model means it's inheriting the Model class (which we import frm Sequelize)
 class Category extends Model { }
@@ -16,7 +19,7 @@ Category.init(
     // FIRST PARAMETER (defining columns)
 
     // (if you don't specify a primary key, sequelize will autocreate one, but best practice to do manually.)
-    category_id: {
+    id: {
       // same as `id INT NOT NULL AUTO_INCREMENT PRIMARY KEY`
       type: DataTypes.INTEGER,
       allowNull: false,
