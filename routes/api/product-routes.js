@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
   // be sure to include its associated Category and Tag data
 
   try {
-    const data = await Product.findAll({ model: Category, Tag });
+    const data = await Product.findAll({ include: Category, Tag });
     res.json(data);
   } catch (err) {
     res.json(err);
@@ -49,9 +49,10 @@ router.post('/', (req, res) => {
   /* Shouldn't it be??????:
     {
     "product_name": "Basketball",
-    "price": 200.00,
-    "stock": 3,
-    "category_id": 1
+      "price": 200.00,
+      "stock": 3,
+      "category_id": 1,
+      "tagIds": [1, 2, 3, 4]
     }
   */
 

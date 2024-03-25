@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
   // tag needs to pull the Product model based off of the ids in ProductTag ... hmmmmm
   // CODE HERE ------------------------VVVVVVVVVV
   try {
-    const data = await Tag.findAll({ model: Product });
+    const data = await Tag.findAll({ include: Product });
     res.json(data);
   } catch (err) {
     res.json(err);
