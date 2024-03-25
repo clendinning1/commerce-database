@@ -31,6 +31,10 @@ router.get('/:id', async (req, res) => {
 
 });
 
+
+// the post req for /products isn't working, even though it's prefab code. hopefully this will fix with the bug i have in tag-routes?
+
+
 // create new product
 router.post('/', (req, res) => {
   /* req.body should look like this...

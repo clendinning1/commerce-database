@@ -7,6 +7,8 @@ const { Tag, Product, ProductTag } = require('../../models');
 router.get('/', async (req, res) => {
   // be sure to include its associated Product data
 
+  // tag needs to pull the Product model based off of the ids in ProductTag ... hmmmmm
+  // CODE HERE ------------------------VVVVVVVVVV
   try {
     const data = await Tag.findAll({ model: Product });
     res.json(data);
@@ -22,8 +24,9 @@ router.get('/:id', async (req, res) => {
   // find a single tag by its `id`
   // be sure to include its associated Product data
   try {
-    // neither Product nor ProductTag are connected. i deffo did it wrong
-    const data = await Tag.findByPk(req.params.id, { include: ProductTag });
+    // tag needs to pull the Product model based off of the ids in ProductTag ... hmmmmm
+    // CODE HERE ---------------------------------------VVVVVVVVVV
+    const data = await Tag.findByPk(req.params.id, { include: Product });
     res.json(data);
   } catch (err) {
     res.json(err);
