@@ -2,7 +2,7 @@
 ## Description
 With this e-commerce database, you can view, create, edit, and delete products in an online store.
 ## Usage
-[Walkthrough Video]()
+[Walkthrough Video](https://drive.google.com/file/d/1JL0MVo8XVlfZU3c0MJarnnbH3swIyZOB/view)
 ## Sources
 ### Packages
 - [dotenv](https://www.dotenv.org/docs/)
