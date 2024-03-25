@@ -3,9 +3,6 @@ const { Model, DataTypes } = require('sequelize');
 // importing sequelize from connection.js
 const sequelize = require('../config/connection.js');
 
-const express = require('express');
-const routes = require('./routes');
-
 // creating a new Sequelize model for Category
 // extending the Model means it's inheriting the Model class (which we import frm Sequelize)
 class Category extends Model { }
