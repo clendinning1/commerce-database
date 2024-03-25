@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
   try {
     const data = await Category.findAll({ model: Product });
     res.json(data);
-  } catch {
+  } catch (err) {
     res.json(err);
     console.log("ERROR:", err);
   }

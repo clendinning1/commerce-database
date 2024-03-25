@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
   try {
     const data = await Product.findAll({ model: Category, Tag });
     res.json(data);
-  } catch {
+  } catch (err) {
     res.json(err);
     console.log("ERROR:", err);
   }
@@ -24,7 +24,7 @@ router.get('/:id', async (req, res) => {
   try {
     const data = await Product.findByPk(req.params.id, { include: Category, Tag });
     res.json(data);
-  } catch {
+  } catch (err) {
     res.json(err);
     console.log("ERROR:", err);
   }
