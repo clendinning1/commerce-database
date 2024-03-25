@@ -16,11 +16,11 @@ Product.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true,
     },
     product_name: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     price: {
       type: DataTypes.DECIMAL,
@@ -40,7 +40,6 @@ Product.init(
     },
     category_id: {
       // same as `FOREIGN KEY category_id REFERENCES Category(id) INT`
-      // remember that references (foreign keys/one-to-ones/one-to-manys) have to be connected in index.js
       type:DataTypes.INTEGER,
       references: {
         // see modelName in Category.js

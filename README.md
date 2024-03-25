@@ -11,3 +11,4 @@ With this e-commerce database, you can view, create, edit, and delete products i
 - [Sequelize](https://sequelize.org/docs/v6/)
 ### References
 - [Sequelize Docs](https://sequelize.org/docs/v6/)
+- https://stackoverflow.com/questions/22958683/how-to-implement-many-to-many-association-in-sequelize
