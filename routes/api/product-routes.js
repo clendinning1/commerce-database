@@ -78,6 +78,10 @@ router.post('/', (req, res) => {
     });
 });
 
+
+
+// the put req (update) code IS working, i can use it as ref
+
 // update product
 router.put('/:id', (req, res) => {
   // update product data
