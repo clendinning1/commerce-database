@@ -49,9 +49,10 @@ router.post('/', (req, res) => {
   /* Shouldn't it be??????:
     {
     "product_name": "Basketball",
-    "price": 200.00,
-    "stock": 3,
-    "category_id": 1
+      "price": 200.00,
+      "stock": 3,
+      "category_id": 1,
+      "tagIds": [1, 2, 3, 4]
     }
   */
 
@@ -77,10 +78,6 @@ router.post('/', (req, res) => {
       res.status(400).json(err);
     });
 });
-
-
-
-// the put req (update) code IS working, i can use it as ref
 
 // update product
 router.put('/:id', (req, res) => {
