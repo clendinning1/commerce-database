@@ -1,7 +1,6 @@
 new todo
 
 bugz
-1. fix /tags individual get routes
 2. fix /products post route
 
 walkthru vid
@@ -28,5 +27,4 @@ walkthru vid
     e. DELETE existing.
 
 readme
-1. write it
 2. link walkthru vid
