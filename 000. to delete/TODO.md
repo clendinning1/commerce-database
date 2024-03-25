@@ -1,8 +1,5 @@
 new todo
 
-bugz
-2. fix /products post route
-
 walkthru vid
 1. create the schema from the MySQL shell.
 2. seed the database from the command line with ` npm run seed `.
